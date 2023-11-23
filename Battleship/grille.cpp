@@ -12,7 +12,7 @@ Grille::Grille(){
 		}
     };
 
-Grille::~grille(){};
+Grille::~Grille(){};
 
 void Grille::afficher(){
 		// affichage de la grille avec des barre 
@@ -25,3 +25,30 @@ void Grille::afficher(){
 			cout << endl;
 		}
 }
+
+bool Grille::isNavire(int x, int y){
+		// si il y a un navire on retourne true sinon false 
+		if (m_tab[x][y] == "O"){
+			return false;
+		}
+		else if (m_tab[x][y]=="N"){
+			return true;
+		} 
+		}
+
+
+
+void Grille::tir_modif_case(int x, int y){
+		if (m_tab[x][y] == "O"){
+			m_tab[x][y] = "X";
+		}
+		else if(m_tab[x][y]=="N"){
+			m_tab[x][y] = "T";
+		}
+}
+
+
+void setNavire(int x, int y){
+		// on met un navire dans la case 
+		m_tab[x][y] = "N";
+};
