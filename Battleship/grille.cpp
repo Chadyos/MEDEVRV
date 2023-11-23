@@ -48,7 +48,7 @@ void Grille::tir_modif_case(int x, int y){
 }
 
 
-void setNavire(int x, int y){
+void Grille::setNavire(int x, int y){
 		// on met un navire dans la case 
 		m_tab[x][y] = "N";
 };
