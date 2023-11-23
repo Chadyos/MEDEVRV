@@ -25,7 +25,7 @@ Navire::Navire(int x, int y, int dir, Grille* g) {
 		vector<int> coor;
 		coor = { 0,0 };
 		for (int i = 0; i < 3; i++) {
-			if(!isNavire(posX, posY)) {
+			if(!g->isNavire(posX, posY)) {
 				coor[0] = posX;
 				coor[1] = posY;
 				position.push_back(coor);
