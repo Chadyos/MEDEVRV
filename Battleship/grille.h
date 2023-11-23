@@ -5,7 +5,7 @@ using namespace std;
 
 // Création de la classe grille
 
-class grille
+class Grille
 {
 public:
 	Grille();
