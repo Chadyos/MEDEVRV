@@ -1,5 +1,5 @@
-# pragma once 
-# include <string>
+#pragma once 
+#include <string>
 #include <iostream>
 using namespace std;
 
@@ -8,8 +8,8 @@ using namespace std;
 class grille
 {
 public:
-	grille();
-	~grille();
+	Grille();
+	~Grille();
 
 	void afficher();
 
