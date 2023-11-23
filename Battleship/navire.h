@@ -1,27 +1,28 @@
+#pragma once
+
 #include <iostream>
 #include <vector>
+
+#include "grille.h"
 
 using namespace std;
 
 class Navire {
 private:
-	vector<int> position;
+	vector<vector<int>> position;
 	bool state;
-	int taille;
+	/*int taille;*/
+	Grille* grille;
 
 public:
 	Navire() {
-		position = { 0,0 };
+		position = { {0,0} };
 		state = false;
-		taille = 0;
+		//taille = 0;
 	}
 
-	Navire(int x, int y, int t) {
-		position.push_back(x);
-		position.push_back(y);
-		state = true;
-		taille = t;
-	}
+	//on fixe la taille à 3
+	Navire(int x, int y, int dir, Grille* g);
 
 	void setState(bool b){ state = b; }
 
