@@ -1,1 +1,25 @@
 .vs/
+
+# Ignore all object files
+*.o
+
+# Ignore the executable file (adjust the name if necessary)
+batailleNavale
+
+# Optionally, ignore all binary files
+*.bin
+*.out
+
+# If using an IDE, you might also want to ignore IDE specific files
+# For example, for Visual Studio Code:
+.vscode/
+
+# Ignore files related to debugging
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
