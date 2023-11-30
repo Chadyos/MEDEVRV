@@ -20,7 +20,7 @@ bool test(int x, int y, int dir) {
 
 Navire::Navire(int x, int y, int dir, Grille* g) {
 	grille = g;
-	while (test(x, y, dir)) {
+	if (test(x, y, dir)) {
 		int posX = x;
 		int posY = y;
 		vector<int> coor;
