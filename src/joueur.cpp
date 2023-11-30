@@ -41,15 +41,14 @@ void Joueur::init(int nbre){
 }
 
 void Joueur::initAuto(int nbre) {
-	srand(time(NULL));
+	srand(rand());
 	int x, y, dir;
 	int i = 1;
 	int taille = 3;
 	while (i <= nbre) {
-		int random = rand();
-		x = random % 10 ;
-		y = (random / 10) % 10;
-		dir = ((random / 100) % 4 + 1) * 2;
+		x = rand() % 10;
+		y = rand() % 10;
+		dir = (rand()%4 + 1) * 2;
 		this->bateaux.push_back(new Navire(x, y, dir, taille, &this->grille));
 		if (this->bateaux.back()->getState()) {
 			i++;
@@ -84,4 +83,8 @@ bool Joueur::ff() {
 		}
 	}
 	return mort;
+}
+
+void Joueur::afficheGrilleAdv() {
+	grille.afficher(true);
 }

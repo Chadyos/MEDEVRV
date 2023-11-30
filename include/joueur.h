@@ -21,6 +21,7 @@ public:
 	void initAuto(int nbre);
 	bool estTouche(int x, int y);
 	bool ff();
+	void afficheGrilleAdv();
 
 	//Getters
 	string getName() { return name; };
