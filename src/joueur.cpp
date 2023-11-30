@@ -21,9 +21,30 @@ void Joueur::init(int nbre){
 		cin >> y;
 		cout << "Direction 2 ↓, 4 ←, 8 ↑ ou 6 → ";
 		cin >> dir;
-		this->bateaux.push_back(new Navire(x, y, dir, this->grille));
+		this->bateaux.push_back(new Navire(x, y, dir, &(this->grille)));
 		if (this->bateaux.back()->getState()) {
 			i++;
+		}
+		else {
+			bateaux.pop_back();
+		}
+	}
+}
+
+void Joueur::initAuto(int nbre) {
+	srand(time(NULL));
+	int x, y, dir;
+	int i = 1;
+	int random = rand();
+	while (i <= nbre) {
+		x = random % 10 ;
+		y = (random / 10) % 10;
+		dir = ((random / 100) % 4 + 1) * 2;
+		this->bateaux.push_back(new Navire(x, y, dir, &this->grille));
+		if (this->bateaux.back()->getState()) {
+			i++;
+		} else {
+			bateaux.pop_back();
 		}
 	}
 }
@@ -35,3 +56,6 @@ bool Joueur::estTouche(int x, int y)
 	return bo;
 }
 
+bool Joueur::ff() {
+
+}

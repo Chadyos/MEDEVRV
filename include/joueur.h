@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <time.h>
 
 #include "navire.h"
 
@@ -17,6 +18,7 @@ public:
 	Joueur();
 	Joueur(string name);
 	void init(int nbre);
+	void initAuto(int nbre);
 	bool estTouche(int x, int y);
 	bool ff();
 
