@@ -14,9 +14,10 @@ batailleNavale
 # For example, for Visual Studio Code:
 .vscode/
 
-*.vcxprok
+*.vcxproj
 *.sln
 *.filters
+*.user
 # Ignore files related to debugging
 *.dSYM/
 *.su
