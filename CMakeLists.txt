@@ -5,6 +5,11 @@ cmake_minimum_required(VERSION 3.0)
 
 project(Battleship)
 
+file(GLOB_RECURSE
+  source_files
+  src/*
+)
+
 # On indique que l'on veut un exécutable "toto" compilé à partir des fichiers
-add_executable(Battleship src/*.cpp)
+add_executable(Battleship ${source_files})
 include_directories (include)
