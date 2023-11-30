@@ -51,6 +51,10 @@ Navire::Navire(int x, int y, int dir, Grille* g) {
 		}
 	}
 	if (position.size() == 3) { state = true; }
-	else { state = false; }
+	else 
+	{ 
+		state = false;
+		cout << "fail to create ship" << endl;
+	}
 }
 
