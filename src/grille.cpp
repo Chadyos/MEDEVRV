@@ -28,10 +28,10 @@ void Grille::afficher(){
 
 bool Grille::isNavire(int x, int y){
 		// si il y a un navire on retourne true sinon false 
-		if (m_tab[x][y] == "O"){
+		if (m_tab[x][y] == "O" || m_tab[x][y] == "X"){
 			return false;
 		}
-		else if (m_tab[x][y]=="N"){
+		else{
 			return true;
 		} 
 		}
