@@ -16,7 +16,7 @@ void Jeu::tourDeJeu () {
     }
     cout << "rentrer le nombre de bateaux" << endl;
     cin >> nbBateaux;
-    while (nbBateaux > 5 && nbBateaux < 1) {
+    while (nbBateaux > 5 || nbBateaux < 1) {
         cout << "rentrer le bon nombre de bateaux" << endl;
         cin >> nbBateaux; 
     }
