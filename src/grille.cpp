@@ -26,6 +26,7 @@ void Grille::afficher(bool hide){
 					if (value == "N"){value ="O";}
 					cout << value << " ";}
 				}
+				cout << endl;
 			}
 			cout << endl;
 		}
