@@ -36,6 +36,16 @@ bool Grille::isNavire(int x, int y){
 		} 
 		}
 
+bool Grille::isNavireTouche(int x, int y){
+		// si il y a un navire on retourne true sinon false 
+		if (m_tab[x][y] == "N"){
+			return false;
+		}
+		else{
+			return true;
+		} 
+		}
+
 
 
 void Grille::tir_modif_case(int x, int y){
