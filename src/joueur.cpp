@@ -13,6 +13,12 @@ Joueur::Joueur(string name){
 void Joueur::init(int nbre){
 	int x, y, dir;
 	int i = 1;
+	string input;
+	cout << "Placement de bateaux. Placement automatique ? (y/n) ";
+	if (input == "y" || input == "Y" || input == "oui" || input == "o" || input == "yes" || input == "OUI") {
+		initAuto(nbre);
+		i = nbre + 1;
+	}
 	while (i <= nbre) {
 		cout << "Positionnement du bateau n°" << i << endl;
 		cout << "Coordonnées x : ";
@@ -57,5 +63,20 @@ bool Joueur::estTouche(int x, int y)
 }
 
 bool Joueur::ff() {
-
+	bool mort = true;
+	for (Navire* navire : bateaux) {
+		if (!navire->getState()) {
+			bool state = false;
+			for (vector<int> pos : navire->getPosition()) {
+				if (!grille.isNavireTouche(pos[0], pos[1])) {
+					state = true;
+					mort = false;
+				}
+			}
+			if (!state) {
+				navire->setState(state);
+			}
+		}
+	}
+	return mort;
 }
