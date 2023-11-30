@@ -10,7 +10,7 @@ void Jeu::tourDeJeu () {
     int nbJoueur, nbBateaux;
     cout << "rentrer le nombre de joueur" << endl;
     cin >> nbJoueur;
-    while (nbJoueur != 1 || nbJoueur !=2) {
+    while (nbJoueur != 1 && nbJoueur !=2) {
         cout << "rentrer le bon nombre" << endl;
         cin >> nbJoueur;
     }
