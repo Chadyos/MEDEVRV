@@ -11,7 +11,7 @@ public:
 	Grille();
 	~Grille();
 
-	void afficher();
+	void afficher(bool hide);
 	bool isNavire(int x, int y);
 	void setNavire(int x, int y);
 	bool isNavireTouche(int x, int y);
