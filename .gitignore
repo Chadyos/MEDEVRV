@@ -18,6 +18,9 @@ batailleNavale
 *.sln
 *.filters
 *.user
+x64/
+Debug/
+
 # Ignore files related to debugging
 *.dSYM/
 *.su
