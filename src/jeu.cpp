@@ -6,35 +6,36 @@ using namespace std;
 
 void Jeu::tourDeJeu () {
     srand(time(0));
+    Grille grille;
     int nbJoueur, nbBateaux;
     cout << "rentrer le nombre de joueur" << endl;
-    cin << nbJoueur;
+    cin >> nbJoueur;
     while (nbJoueur != 1 || nbJoueur !=2) {
         cout << "rentrer le bon nombre" << endl;
-        cin nbJoueur;
+        cin >> nbJoueur;
     }
     cout << "rentrer le nombre de bateaux" << endl;
-    cin << nbBateaux;
+    cin >> nbBateaux;
     while (nbBateaux > 5 && nbBateaux < 1) {
         cout << "rentrer le bon nombre de bateaux" << endl;
-        cin << nbBateaux; 
+        cin >> nbBateaux; 
     }
-    joueur1 = new Joueur ();
-    joueur2 = new Joueur ();
+    Joueur joueur1, joueur2;
+    
     joueur1.init (nbBateaux);
     if (nbJoueur == 2) {
         joueur2.init (nbBateaux);
     }
-    else { joueur2.initAuto (nbBateaux)}
+    else { joueur2.initAuto (nbBateaux);}
     int x, y;
     for (;;) {
         int n = getNbTour ();
         this -> setNbTour (n+1);
         cout << "joueur 1, a toi de jouer" << endl;
         cout << "entre x" << endl;
-        cin << x;
+        cin >> x;
         cout << "entre y" << endl;
-        cin << y;
+        cin >> y;
         joueur2.estTouche (x, y);
         if (joueur2.ff ()) {
             this -> setGagnant (1);
@@ -43,13 +44,13 @@ void Jeu::tourDeJeu () {
         if (nbJoueur == 2) {
             cout << "joueur 2, a toi de jouer" << endl;
             cout << "entre x" << endl;
-            cin << x;
+            cin >> x;
             cout << "entre y" << endl;
-            cin << y;
+            cin >> y;
             joueur1.estTouche (x, y);
         }
         else {
-            x,y = this -> genererCoord ();
+            auto [x,y] = this->genererCoord (grille);
             joueur1.estTouche (x,y);
         }
         if (joueur1.ff ()) {
@@ -78,12 +79,13 @@ int Jeu::getGagnant () {
     return gagnant;
 }
 
-<int, int> Jeu::genererCoord (Grille grille) {
+pair<int, int> Jeu::genererCoord (Grille grille) {
     int row, col;
-        do {
-            // Génération aléatoire de la position
-            row = std::rand() % 10;
-            col = std::rand() % 10;
-        } while (grille[row][col] == 'X' || grille[row][col] == 'T');
-    return row, col;
+    do {
+        // Génération aléatoire de la position
+        row = std::rand() % 10;
+        col = std::rand() % 10;
+    } while (grille.m_tab[row][col] == "X" || grille.m_tab[row][col] == "T");
+
+    return std::make_pair(row, col);
 }
