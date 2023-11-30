@@ -70,7 +70,7 @@ bool Joueur::estTouche(int x, int y)
 bool Joueur::ff() {
 	bool mort = true;
 	for (Navire* navire : bateaux) {
-		if (!navire->getState()) {
+		if (navire->getState()) {
 			bool state = false;
 			for (vector<int> pos : navire->getPosition()) {
 				if (!grille.isNavireTouche(pos[0], pos[1])) {
