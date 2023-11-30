@@ -2,15 +2,15 @@
 #include <iostream>
 using namespace std;
 
-Class Jeu {
+class Jeu {
 private : 
     int gagnant;
-    int nbTours
+    int nbTours ; 
 public :
     void tourDeJeu ();
     void setNbTour (int n);
     int getNbTour ();
     void setGagnant (int n);
     int getGagnant ();
-    pair<int, int> genererCoord ();
-}
+    pair<int, int> genererCoord (Grille grille);
+};

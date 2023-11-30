@@ -15,6 +15,5 @@ public:
 	bool isNavire(int x, int y);
 	void setNavire(int x, int y);
 	void tir_modif_case(int x, int y);
-private:
 	string m_tab[10][10];
 };
