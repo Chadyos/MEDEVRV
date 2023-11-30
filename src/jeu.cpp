@@ -38,7 +38,7 @@ void Jeu::tourDeJeu () {
             cin >> y;
         } while (grille.m_tab[x-1][y-1] == "X" || grille.m_tab[x-1][y-1] == "T");
         joueur2.estTouche (x-1, y-1);
-        joueur1.afficheGrilleAdv();
+        joueur2.afficheGrilleAdv();
         if (joueur2.ff ()) {
             this -> setGagnant (1);
             break;
@@ -61,7 +61,7 @@ void Jeu::tourDeJeu () {
                 y=genererCoord ();
             } while (grille.m_tab[x][y] == "X" || grille.m_tab[x][y] == "T");
             joueur1.estTouche (x,y);
-            joueur2.afficheGrilleAdv();
+            joueur1.afficheGrilleAdv();
         }
         if (joueur1.ff ()) {
             setGagnant (2);
