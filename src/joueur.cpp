@@ -1,4 +1,4 @@
-﻿#include "Joueur.h"
+﻿#include "joueur.h"
 
 Joueur::Joueur(){
 	this->name = "Joueur";
