@@ -12,5 +12,5 @@ public :
     int getNbTour ();
     void setGagnant (int n);
     int getGagnant ();
-    pair<int, int> genererCoord (Grille grille);
+    int genererCoord ();
 };

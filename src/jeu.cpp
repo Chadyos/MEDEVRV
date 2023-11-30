@@ -52,8 +52,12 @@ void Jeu::tourDeJeu () {
             } while (grille.m_tab[x][y] == "X" || grille.m_tab[x][y] == "T");
             joueur1.estTouche (x, y);
         }
-        else {
-            auto [x,y] = this->genererCoord (grille);
+               else {
+            do {
+                x=genererCoord ();  
+                y=genererCoord ();
+            } while (grille.m_tab[x][y] == "X" || grille.m_tab[x][y] == "T");
+            
             joueur1.estTouche (x,y);
         }
         if (joueur1.ff ()) {
@@ -82,13 +86,7 @@ int Jeu::getGagnant () {
     return gagnant;
 }
 
-pair<int, int> Jeu::genererCoord (Grille grille) {
-    int row, col;
-    do {
-        // Génération aléatoire de la position
-        row = rand() % 10;
-        col = rand() % 10;
-    } while (grille.m_tab[row][col] == "X" || grille.m_tab[row][col] == "T");
-
-    return std::make_pair(row, col);
+int Jeu::genererCoord () {
+    int coord = std::rand() % 10;
+    return coord;
 }
