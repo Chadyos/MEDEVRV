@@ -23,12 +23,6 @@ public:
 
 	//on fixe la taille à 3
 	Navire(int x, int y, int dir, Grille* g);
-
 	void setState(bool b){ state = b; }
-
-	vector<int> getPosition() { return position; }
-
 	bool getState() { return state; }
-
-	int getTaille() { return taille; }
 };

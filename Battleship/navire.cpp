@@ -19,6 +19,7 @@ bool test(int x, int y, int dir) {
 }
 
 Navire::Navire(int x, int y, int dir, Grille* g) {
+	grille = g;
 	while (test(x, y, dir)) {
 		int posX = x;
 		int posY = y;
@@ -50,5 +51,6 @@ Navire::Navire(int x, int y, int dir, Grille* g) {
 		}
 	}
 	if (position.size() == 3) { state = true; }
+	else { state = false; }
 }
 
