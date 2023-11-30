@@ -2,30 +2,31 @@
 
 // navire pour n
 
-bool test(int x, int y, int dir) {
+bool test(int x, int y, int dir, int taille) {
 	switch (dir)
 	{
 	case 6:
-		return x < 8;
+		return x <= 10 - taille;
 	case 4:
-		return x > 1;
+		return x >= taille - 1 ;
 	case 2:
-		return y > 1;
+		return y >= taille - 1;
 	case 8:
-		return y < 8;
+		return y <= 10 - taille;
  	default:
 		break;
 	}
 }
 
-Navire::Navire(int x, int y, int dir, Grille* g) {
+Navire::Navire(int x, int y, int dir, int t, Grille* g) {
 	grille = g;
-	if (test(x, y, dir)) {
+	taille = t;
+	if (test(x, y, dir, taille)) {
 		int posX = x;
 		int posY = y;
 		vector<int> coor;
 		coor = { 0,0 };
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < taille; i++) {
 			if(!g->isNavire(posX, posY)) {
 				coor[0] = posX;
 				coor[1] = posY;
@@ -49,7 +50,7 @@ Navire::Navire(int x, int y, int dir, Grille* g) {
 			}
 		}
 	}
-	if (position.size() == 3) 
+	if (position.size() == taille) 
 	{ 
 		state = true;
 		for (int i = 0; i < 3; i++) {

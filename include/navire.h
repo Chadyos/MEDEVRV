@@ -22,7 +22,7 @@ public:
 	}
 
 	//on fixe la taille à 3
-	Navire(int x, int y, int dir, Grille* g);
+	Navire(int x, int y, int dir, int taille, Grille* g);
 	void setState(bool b){ state = b; }
 	bool getState() { return state; }
 	vector<vector<int>> getPosition() { return position; }
