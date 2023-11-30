@@ -14,17 +14,22 @@ Grille::Grille(){
 
 Grille::~Grille(){};
 
-void Grille::afficher(){
+void Grille::afficher(bool hide){
 		// affichage de la grille avec des barre 
 		cout << "  1 2 3 4 5 6 7 8 9 10" << endl;
 		for (int i=0; i<10; i++){
-			cout << i+1 << " ";
+			cout << i+1 << "  ";
 			for (int j=0; j<10; j++){
-				cout << m_tab[i][j] << " ";
+				if(!hide){cout << m_tab[i][j] << " ";}
+				else {
+					string value = m_tab[i][j];
+					if (value == "N"){value ="O";}
+					cout << value << " ";}
+				}
 			}
 			cout << endl;
 		}
-}
+
 
 bool Grille::isNavire(int x, int y){
 		// si il y a un navire on retourne true sinon false 
