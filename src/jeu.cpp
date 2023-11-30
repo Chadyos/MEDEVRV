@@ -31,22 +31,26 @@ void Jeu::tourDeJeu () {
     for (;;) {
         int n = getNbTour ();
         this -> setNbTour (n+1);
-        cout << "joueur 1, a toi de jouer" << endl;
-        cout << "entre x" << endl;
-        cin >> x;
-        cout << "entre y" << endl;
-        cin >> y;
+        do {
+            cout << "joueur 1, a toi de jouer" << endl;
+            cout << "entre x" << endl;
+            cin >> x;
+            cout << "entre y" << endl;
+            cin >> y;
+        } while (grille.m_tab[row][col] == "X" || grille.m_tab[row][col] == "T");
         joueur2.estTouche (x, y);
         if (joueur2.ff ()) {
             this -> setGagnant (1);
             break;
         }
         if (nbJoueur == 2) {
-            cout << "joueur 2, a toi de jouer" << endl;
-            cout << "entre x" << endl;
-            cin >> x;
-            cout << "entre y" << endl;
-            cin >> y;
+            do {
+                cout << "joueur 2, a toi de jouer" << endl;
+                cout << "entre x" << endl;
+                cin >> x;
+                cout << "entre y" << endl;
+                cin >> y;
+            } while (grille.m_tab[row][col] == "X" || grille.m_tab[row][col] == "T");
             joueur1.estTouche (x, y);
         }
         else {
