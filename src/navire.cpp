@@ -30,7 +30,6 @@ Navire::Navire(int x, int y, int dir, Grille* g) {
 				coor[0] = posX;
 				coor[1] = posY;
 				position.push_back(coor);
-				g->setNavire(posX, posY);
 				switch (dir) {
 				case 6:
 					posX += 1;
@@ -50,7 +49,13 @@ Navire::Navire(int x, int y, int dir, Grille* g) {
 			}
 		}
 	}
-	if (position.size() == 3) { state = true; }
+	if (position.size() == 3) 
+	{ 
+		state = true;
+		for (int i = 0; i < 3; i++) {
+			g->setNavire(position[i][0], position[i][1]);
+		}
+	}
 	else 
 	{ 
 		state = false;
