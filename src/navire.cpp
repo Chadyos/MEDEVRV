@@ -19,13 +19,14 @@ bool test(int x, int y, int dir) {
 }
 
 Navire::Navire(int x, int y, int dir, Grille* g) {
+	grille = g;
 	while (test(x, y, dir)) {
 		int posX = x;
 		int posY = y;
 		vector<int> coor;
 		coor = { 0,0 };
 		for (int i = 0; i < 3; i++) {
-			if(!isNavire(posX, posY)) {
+			if(!g->isNavire(posX, posY)) {
 				coor[0] = posX;
 				coor[1] = posY;
 				position.push_back(coor);
@@ -50,5 +51,6 @@ Navire::Navire(int x, int y, int dir, Grille* g) {
 		}
 	}
 	if (position.size() == 3) { state = true; }
+	else { state = false; }
 }
 
