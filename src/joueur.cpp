@@ -45,8 +45,8 @@ void Joueur::initAuto(int nbre) {
 	int x, y, dir;
 	int i = 1;
 	int taille = 3;
-	int random = rand();
 	while (i <= nbre) {
+		int random = rand();
 		x = random % 10 ;
 		y = (random / 10) % 10;
 		dir = ((random / 100) % 4 + 1) * 2;
