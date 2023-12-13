@@ -59,8 +59,7 @@ void Joueur::initAuto(int nbre) {
 	grille.afficher(false);
 }
 
-bool Joueur::estTouche(int x, int y)
-{
+bool Joueur::estTouche(int x, int y) {
 	bool bo = grille.isNavire(x, y);
 	grille.tir_modif_case(x, y);
 	return bo;
