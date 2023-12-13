@@ -1,23 +1,24 @@
 ﻿#include "joueur.h"
 
-Joueur::Joueur(){
+Joueur::Joueur() {
 	this->name = "Joueur";
 	this->grille = Grille();
 }
 
-Joueur::Joueur(string name){
+Joueur::Joueur(string name) {
 	this->name = name;
 	this->grille = Grille();
 }
 
-void Joueur::init(int nbre){
+void Joueur::init(int nbre) {
 	int x, y, dir;
 	int i = 1;
 	int taille = 3;
 	string input;
 	cout << "Placement de bateaux. Placement automatique ? (y/n) ";
 	cin >> input;
-	if (input == "y" || input == "Y" || input == "oui" || input == "o" || input == "yes" || input == "OUI") {
+	if (input == "y" || input == "Y" || input == "oui" || 
+		input == "o" || input == "yes" || input == "OUI") {
 		initAuto(nbre);
 		i = nbre + 1;
 	}
