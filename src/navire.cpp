@@ -6,13 +6,13 @@ bool test(int x, int y, int dir, int taille) {
 	switch (dir)
 	{
 	case 6:
-		return x <= 10 - taille;
-	case 4:
-		return x >= taille - 1 ;
-	case 2:
-		return y >= taille - 1;
-	case 8:
 		return y <= 10 - taille;
+	case 4:
+		return y >= taille - 1 ;
+	case 2:
+		return x <= 10 - taille;
+	case 8:
+		return x >= taille - 1;
  	default:
 		break;
 	}
