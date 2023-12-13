@@ -34,16 +34,16 @@ Navire::Navire(int x, int y, int dir, int t, Grille* g) {
 				position.push_back(coor);
 				switch (dir) {
 				case 6:
-					posX += 1;
+					posY += 1;
 					break;
 				case 4:
-					posX -= 1;
-					break;
-				case 2:
 					posY -= 1;
 					break;
+				case 2:
+					posX += 1;
+					break;
 				case 8:
-					posY += 1;
+					posX -= 1;
 					break;
 				default:
 					break;
