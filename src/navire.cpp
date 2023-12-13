@@ -16,6 +16,7 @@ bool test(int x, int y, int dir, int taille) {
  	default:
 		break;
 	}
+	return false;
 }
 
 Navire::Navire(int x, int y, int dir, int t, Grille* g) {
