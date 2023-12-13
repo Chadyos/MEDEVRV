@@ -30,7 +30,7 @@ void Joueur::init(int nbre) {
 		cin >> y;
 		cout << "Direction 2 ↓, 4 ←, 8 ↑ ou 6 → ";
 		cin >> dir;
-		this->bateaux.push_back(new Navire(x, y, dir, taille, &(this->grille)));
+		this->bateaux.push_back(new Navire(x-1, y-1, dir, taille, &(this->grille)));
 		if (this->bateaux.back()->getState()) {
 			i++;
 			grille.afficher(false);
