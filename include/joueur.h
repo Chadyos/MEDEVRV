@@ -9,65 +9,102 @@
 
 using namespace std;
 
-class Joueur {
+class Joueur
+{
 	string name;
-	vector<Navire*> bateaux;
+	vector<Navire *> bateaux;
 	Grille grille;
 
 public:
 	/**
-	* \brief Constructor
-	* Constructor
-	*/
+	 * \brief Constructor
+	 * Constructor
+	 */
 	Joueur();
 
-
 	/**
-	* \brief Constructor
-	* Constructor with the name of the player
-	*/
+	 * \brief Constructor
+	 * Constructor with the name of the player
+	 */
 	Joueur(string name);
 
 	/**
-	* Fonction Permettant d'initialiser les navires d'un joueur dans sa grille
-	* Prends en paramètre le nombre de navire à placer
-	* Demande d'abord au joueur s'il veut un placement automatique
-	* Sinon place les navires un par un en entrant successivment les coordonnées x et y
-	*/
+	 * Fonction Permettant d'initialiser les navires d'un joueur dans sa grille
+	 * Prends en paramï¿½tre le nombre de navire ï¿½ placer
+	 * Demande d'abord au joueur s'il veut un placement automatique
+	 * Sinon place les navires un par un en entrant successivment les coordonnï¿½es x et y
+	 */
 	void init(int nbre);
 
 	/**
-	* Fonction Permettant d'initialiser automatiquement les navires la grille
-	*/
+	 * Fonction Permettant d'initialiser automatiquement les navires la grille
+	 */
 	void initAuto(int nbre);
 
 	/**
-	* @param x Coordonnée x d'un tir
-	* @param y Coordonnée y d'un tir
-	* @return True si un bateau est touché à ces coordonnées
-	*/
+	 * @param x Coordonnï¿½e x d'un tir
+	 * @param y Coordonnï¿½e y d'un tir
+	 * @return True si un bateau est touchï¿½ ï¿½ ces coordonnï¿½es
+	 */
 	bool estTouche(int x, int y);
 
 	/**
-	* Return True si le joueur a perdu
-	*/
+	 * Return True si le joueur a perdu
+	 */
 	bool ff();
 
 	/**
-	* Affiche la grille sans montrer les bateaux non touché
-	* Il s'agit de la vue qu'aurait l'adversaire
-	*/
+	 * Affiche la grille sans montrer les bateaux non touchï¿½
+	 * Il s'agit de la vue qu'aurait l'adversaire
+	 */
 	void afficheGrilleAdv();
 
-	//Getters
+	/**
+	 * @brief RÃ©cupÃ¨re le nom du joueur.
+	 *
+	 * @return string Le nom du joueur.
+	 */
 	string getName() { return name; };
-	vector<Navire*> getBateaux() { return bateaux; };
+
+	/**
+	 * @brief RÃ©cupÃ¨re la liste des navires du joueur.
+	 *
+	 * @return vector<Navire*> La liste des navires du joueur.
+	 */
+	vector<Navire *> getBateaux() { return bateaux; };
+
+	/**
+	 * @brief RÃ©cupÃ¨re la grille de jeu du joueur.
+	 *
+	 * @return Grille La grille de jeu du joueur.
+	 */
 	Grille getGrille() { return grille; };
 
-	//Setters
-	void setName(string name) { name = name; };
-	void setBateaux(vector<Navire*>bateaux) { bateaux = bateaux; };
-	void setGrille(Grille grille) { grille = grille; };
-	void addBateaux(Navire* bateau) { bateaux.push_back(bateau); };
+	/**
+	 * @brief DÃ©finit le nom du joueur.
+	 *
+	 * @param name Le nouveau nom du joueur.
+	 */
+	void setName(string name) { this->name = name; };
 
+	/**
+	 * @brief DÃ©finit la liste des navires du joueur.
+	 *
+	 * @param bateaux La nouvelle liste des navires du joueur.
+	 */
+	void setBateaux(vector<Navire *> bateaux) { this->bateaux = bateaux; };
+
+	/**
+	 * @brief DÃ©finit la grille de jeu du joueur.
+	 *
+	 * @param grille La nouvelle grille de jeu du joueur.
+	 */
+	void setGrille(Grille grille) { this->grille = grille; };
+
+	/**
+	 * @brief Ajoute un navire Ã  la liste des navires du joueur.
+	 *
+	 * @param bateau Le navire Ã  ajouter.
+	 */
+	void addBateaux(Navire *bateau) { bateaux.push_back(bateau); };
 };

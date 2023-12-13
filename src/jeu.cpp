@@ -4,6 +4,15 @@
 #include "grille.h"
 using namespace std;
 
+/**
+ * @brief Méthode qui gère le déroulement d'un tour de jeu.
+ * 
+ * Cette méthode permet de gérer les actions effectuées lors d'un tour de jeu.
+ * Elle demande le nombre de joueurs et le nombre de bateaux, initialise les joueurs,
+ * puis effectue les actions de chaque joueur tour à tour jusqu'à ce qu'un joueur gagne.
+ * 
+ * @return void
+ */
 void Jeu::tourDeJeu () {
     srand(time(0));
     Grille grille;
@@ -71,24 +80,49 @@ void Jeu::tourDeJeu () {
     cout << "Bravo au joueur " << this -> getGagnant () << " d'avoir gagne" <<endl; 
 }
 
+/**
+ * @brief Définit le nombre de tours du jeu.
+ * 
+ * @param n Le nombre de tours à définir.
+ */
 void Jeu::setNbTour (int n) {
     nbTours = n;
     return ;
 }
 
+/**
+ * @brief Renvoie le nombre de tours du jeu.
+ * 
+ * @return Le nombre de tours du jeu.
+ */
 int Jeu::getNbTour () { 
     return nbTours;
 }
 
+/**
+ * @brief Définit le gagnant du jeu.
+ * 
+ * @param n Le numéro du gagnant.
+ */
 void Jeu::setGagnant (int n) {
     gagnant = n;
     return ;
 }
 
+/**
+ * @brief Renvoie le gagnant du jeu.
+ * 
+ * @return Le gagnant du jeu.
+ */
 int Jeu::getGagnant () { 
     return gagnant;
 }
 
+/**
+ * Génère une coordonnée aléatoire entre 0 et 9.
+ * 
+ * @return La coordonnée générée.
+ */
 int Jeu::genererCoord () {
     int coord = std::rand() % 10;
     return coord;
