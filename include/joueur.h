@@ -9,6 +9,13 @@
 
 using namespace std;
 
+/**
+ * @class Joueur
+ * @brief Représente Joueur dans un Jeu.
+ *
+ * Cette classe représente un Joueur dans un jeu.
+ * Un Joueur possède un nom, une liste de Navire et une grille.
+ */
 class Joueur
 {
 	string name;
